@@ -16,34 +16,44 @@
 .decl Throw(?insn:Throw_Insn, ?var:Var)
 
 .decl LoadInstanceField(?base:Var, ?sig:Field, ?to:Var, ?inmethod:Method)
+.output LoadInstanceField
 
 .decl StoreInstanceField(?from:Var, ?base:Var, ?signature:Field, ?inmethod:Method)
+.output StoreInstanceField
 
 .decl LoadStaticField(?sig:Field, ?to:Var, ?inmethod:Method)
+.output LoadStaticField
 
 .decl StoreStaticField(?from:Var, ?signature:Field, ?inmethod:Method)
+.output StoreStaticField
 
 .decl LoadArrayIndex(?base:Var, ?to:Var, ?inmethod:Method)
+.output LoadArrayIndex
 
 .decl StoreArrayIndex(?from:Var, ?base:Var, ?inmethod:Method)
+.output StoreArrayIndex
 
 .decl AssignCast(?type:Type, ?from:Var, ?to:Var, ?inmethod:Method)
+.output AssignCast
 
 .decl AssignLocal(?from:Var, ?to:Var, ?inmethod:Method)
+.output AssignLocal
 
 .decl AssignNull(?to:Var, ?inmethod:Method)
 
 .decl AssignHeapAllocation(?heap:HeapAllocation, ?to:Var, ?inmethod:Method)
+.output AssignHeapAllocation
 
 // Note: a Jimple method can have multiple return variables
 .decl ReturnVar(?var:Var, ?method:Method)
+.output ReturnVar
 
 .decl VirtualMethodInvocation(?invocation:MethodInvocation, ?signature:Method, ?inmethod:Method)
 
 .decl SuperMethodInvocation(?invocation:MethodInvocation, ?signature:Method, ?inmethod:Method)
 
 .decl StaticMethodInvocation(?invocation:MethodInvocation, ?signature:Method, ?inmethod:Method)
-
+.output StaticMethodInvocation
 
 Throw(?insn, ?var) :-
 	isThrow_Insn(?insn),

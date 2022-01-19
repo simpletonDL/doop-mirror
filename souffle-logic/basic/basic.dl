@@ -18,6 +18,7 @@ AnyMainMethodDeclaration(?method, ?type) :-
    Method_Modifier("static", ?method).
 
 .decl MainMethodDeclaration(?method:Method)
+.output MainMethodDeclaration
 
 MainMethodDeclaration(?method) :-
 #ifdef DISCOVER_MAIN_METHODS

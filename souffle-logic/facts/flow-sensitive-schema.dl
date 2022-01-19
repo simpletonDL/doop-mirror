@@ -94,8 +94,10 @@
 .decl Method_DeclaresException(?exceptionType:ReferenceType, ?method:Method)
 
 .decl FormalParam(?index:number, ?method:Method, ?var:Var)
+.output FormalParam
 
 .decl ThisVar(?method:Method, ?var:Var)
+.output ThisVar
 
 //-----------------------------------------------------------------------------
 
@@ -103,6 +105,7 @@
 .decl isVar(v:Var)
 
 .decl Var_Type(?var:Var, ?type:Type)
+.output Var_Type
 .decl Var_DeclaringMethod(?var:Var, ?method:Method)
 .decl Var_SimpleName(?var:Var, ?simplename:symbol)
 
@@ -143,6 +146,7 @@
 .decl isStringRaw(?id:symbol)
 
 .decl HeapAllocation_Type(?heap:HeapAllocation, ?type:ReferenceType)
+.output HeapAllocation_Type
 .decl OriginalHeapAllocation_Type(?heap:HeapAllocation, ?type:ReferenceType)
 
 // [Miscellaneous]
@@ -170,6 +174,7 @@
 .decl Instruction_Index(?insn:Instruction, ?index:number)
 .decl Instruction_Line(?insn:Instruction, ?index:number)
 .decl Instruction_Method(?insn:Instruction, ?inMethod:Method)
+.output Instruction_Method
 
 .type Throw_Insn                      = Instruction
 .type ThrowNull_Insn                  = Throw_Insn
@@ -346,6 +351,7 @@
 .decl ArrayNumIndex(?insn:Instruction, ?index:number)
 
 .decl ComponentType(?arrayType:ArrayType, ?componentType:Type)
+.output ComponentType
 
 .decl LoadArrayIndex_Base(?insn:LoadArrayIndex_Insn, ?var:Var)
 .decl LoadArrayIndex_To(?insn:LoadArrayIndex_Insn, var:Var)
@@ -408,18 +414,24 @@
 
 // The signature of the method being called
 .decl MethodInvocation_Method(?invocation:MethodInvocation, ?signature:Method)
+.output MethodInvocation_Method
 
 // The (call-site) variable that holds the result of the invocation
 .decl AssignReturnValue(?invocation:MethodInvocation, ?to:Var)
+.output AssignReturnValue
 
 // The actual parameters of the invocation. Note: this does not
 // contain the receiver object (see MethodInvocation:Base predicates).
 .decl ActualParam(?index:number, ?invocation:MethodInvocation, ?var:Var)
+.output ActualParam
 
 // Virtual Method Invocation
 .decl VirtualMethodInvocation_Base(?invocation:VirtualMethodInvocation_Insn, ?base:Var)
 .decl VirtualMethodInvocation_SimpleName(?invocation:MethodInvocation, ?simplename:symbol)
 .decl VirtualMethodInvocation_Descriptor(?invocation:MethodInvocation, ?descriptor:MethodDescriptor)
+.output VirtualMethodInvocation_Base
+.output VirtualMethodInvocation_SimpleName
+.output VirtualMethodInvocation_Descriptor
 
 // Super Method Invocation
 .decl SuperMethodInvocation_Base(?invocation:SuperMethodInvocation_Insn, ?base:Var)
@@ -450,6 +462,7 @@
 .decl SpecialMethodInvocation_Base(?invocation:SpecialMethodInvocation_Insn, ?base:Var)
 .decl SpecialMethodInvocation_SimpleName(?invocation:MethodInvocation, ?simplename:symbol)
 .decl SpecialMethodInvocation_Descriptor(?invocation:MethodInvocation, ?descriptor:MethodDescriptor)
+.output SpecialMethodInvocation_Base
 
 .decl MethodInvocation_Base(?invocation:MethodInvocation, ?base:Var)
 

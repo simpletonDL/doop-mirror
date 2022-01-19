@@ -71,6 +71,7 @@ Superclass(?c, ?a) :-
 
 .decl SubtypeOf(?subtype:Type, ?type:Type)
 .decl SupertypeOf(?supertype:Type, ?type:Type)
+.output SupertypeOf
 .decl Unsubclassable(?type:ReferenceType)
 .decl Subclassable(?type:ReferenceType)
 .decl SubtypeOfDifferent(?subtype:Type, ?type:Type)
